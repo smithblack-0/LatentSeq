@@ -1,0 +1,23 @@
+# Python bytecode and test caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Packaging output
+build/
+dist/
+*.egg-info/
+
+# Environments and local tooling
+.venv/
+venv/
+.env
+.env.*
+.idea/
+.vscode/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
