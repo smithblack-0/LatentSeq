@@ -2,7 +2,15 @@
 
 LatentSeq generates aligned latent-state, grammar-state, and observable-token sequences from independently reusable stochastic components.
 
-For complete configuration, pooling, persistence, and advanced-API examples, see `docs/usage.md`. The current implementation is the initial build and is still under review; backend verification status is tracked in `CHANGELOG.md` and `docs/testing.md`.
+For complete configuration, pooling, persistence, and advanced-API examples, see `docs/guides/usage.md`.
+
+Repository documentation is separated by purpose:
+
+- `docs/standards/` constrains coding, testing, and review practice independently of the current implementation.
+- `docs/guides/` describes the current system, test layout, and user workflows.
+- `CHANGELOG.md` records what changed over time.
+
+See `docs/README.md` for the documentation hierarchy.
 
 ## Normal use
 
@@ -70,13 +78,3 @@ from latentseq.language import (
 ```
 
 These lower-level functions are not required for normal use.
-
-## Repository documentation
-
-- `CHANGELOG.md` — subsystem-by-subsystem change inventory and verification status.
-- `docs/review-guide.md` — implementation-to-test map for auditing the initial build.
-- `docs/testing.md` — test ownership, commands, package checks, and CUDA certification boundary.
-- `docs/development.md` — source layout, responsibility boundaries, and development workflow.
-- `CONTRIBUTING.md` — concise entry point for changes to the repository.
-
-Hosted CI certifies the CPU/package paths only. CUDA certification is kept explicit and separate rather than inferred from CPU success.

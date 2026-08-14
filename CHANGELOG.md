@@ -9,7 +9,8 @@ This file records user-visible and maintainer-relevant changes to LatentSeq. The
 - Added the installable `latentseq` package using a `src/` layout and `pyproject.toml` metadata.
 - Added a narrow top-level API exposing `Agent`, `Language`, `Vocabulary`, `Generator`, and `validate_compatibility`.
 - Added Hugging Face-style `from_config`, `save_pretrained`, and `from_pretrained` lifecycle methods for reusable sampled components.
-- Added usage, development, testing, and review documentation so the implementation can be audited by subsystem rather than as one monolithic change.
+- Added a documentation hierarchy that separates implementation-independent coding/testing/review standards from current system/testing/usage guides.
+- Added contributor/documentation entry points so current code and tests cannot silently become the source of engineering standards.
 - Added CPU/package CI that builds the distribution, installs the wheel, and runs the non-CUDA test suite. CUDA remains a separate explicit certification target.
 
 ### Agent

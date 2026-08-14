@@ -1,13 +1,21 @@
 # Contributing
 
-LatentSeq is currently in its initial implementation/review phase. Changes should remain easy to audit against the generator specification and the subsystem boundaries documented in the repository.
+LatentSeq separates engineering rules from repository-specific navigation. Read the standards before using the current code/tests as examples; the implementation is expected to change when it violates those standards.
 
-Start with:
+Start with `docs/README.md` for the documentation hierarchy.
 
-- `docs/development.md` for the source/responsibility map and development commands.
-- `docs/testing.md` for test ownership and backend certification.
-- `docs/review-guide.md` for the subsystem-by-subsystem change map.
-- `CHANGELOG.md` for the durable change inventory.
+## Standards
+
+- `docs/standards/coding.md` — what acceptable code/architecture/documentation looks like.
+- `docs/standards/testing.md` — TDD and evidence requirements.
+- `docs/standards/review.md` — what must be present before a change is reasonably approvable.
+
+## Current repository guides
+
+- `docs/guides/system.md` — architecture and source responsibility map.
+- `docs/guides/testing.md` — current tests, commands, markers, and CI layout.
+- `docs/guides/usage.md` — user-facing API examples.
+- `CHANGELOG.md` — durable change history.
 
 Install development dependencies with:
 
@@ -21,4 +29,4 @@ Run the CPU-certifiable suite with:
 python -m pytest -m 'not cuda'
 ```
 
-Behavioral changes should update the test boundary that owns the behavior and the changelog entry when the change is user-visible or materially affects maintainers. Compile/CUDA-sensitive changes require the corresponding backend checks; passing unrelated CPU tests is not sufficient evidence.
+A change should update guides when the repository layout/usage changes and update `CHANGELOG.md` when behavior or maintainer-relevant repository capability changes. Standards should change only when the engineering policy itself is deliberately changed, never merely to fit a finished implementation.
