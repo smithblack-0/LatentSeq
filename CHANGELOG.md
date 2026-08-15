@@ -11,6 +11,7 @@ This file records user-visible and maintainer-relevant changes to LatentSeq. The
 - Added Hugging Face-style `from_config`, `save_pretrained`, and `from_pretrained` lifecycle methods for reusable sampled components.
 - Added a documentation hierarchy that separates implementation-independent coding/testing/review standards from current system/testing/usage guides.
 - Added contributor/documentation entry points so current code and tests cannot silently become the source of engineering standards.
+- Added a review requirement that project-establishing or substantially expanding changes leave behind repository infrastructure sufficient for future maintenance and audit, rather than relying on PR metadata or author memory.
 - Added CPU/package CI that builds the distribution, installs the wheel, and runs the non-CUDA test suite. CUDA remains a separate explicit certification target.
 
 ### Agent

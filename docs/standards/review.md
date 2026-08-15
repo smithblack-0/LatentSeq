@@ -45,6 +45,23 @@ A changelist answers **what changed**. An evidence map answers **where should I 
 
 The durable `CHANGELOG.md` records user-visible and maintainer-relevant changes over time. Pull-request metadata may link to it, but must still describe the current review scope clearly enough that the reviewer does not have to reconstruct the PR from repository history.
 
+## Foundational changes must leave a self-maintaining repository
+
+A pull request that establishes a project or substantially expands its responsibilities must leave the repository itself maintainable and auditable after the pull request is closed. Approval must not depend on the author remembering how the build works or on maintenance-critical information remaining only in PR discussion.
+
+Review should verify that persistent repository infrastructure is appropriate to the project's current scale and stage. Where applicable, that includes:
+
+- durable change history for user-visible and maintainer-relevant changes;
+- stable engineering standards and maintainer orientation distinct from descriptions of the current implementation;
+- discoverable development, testing, build, and package workflows;
+- enough repository navigation to locate current responsibilities and their evidence without reconstructing them from history;
+- routine automated verification for contracts that can reasonably be checked continuously;
+- explicit treatment of backend or environment requirements that cannot yet be automated.
+
+The exact infrastructure is proportional to the project. Self-maintenance does not justify speculative release, deployment, publishing, or other future-stage machinery that the project does not yet need.
+
+PR metadata is review-time context. It cannot substitute for durable repository information that future maintainers need after the PR is merged.
+
 ## Pull-request metadata
 
 PR title and description are part of the engineering deliverable.
